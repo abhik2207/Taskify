@@ -1,0 +1,1 @@
+I have to create a full stack project using EJS and NodeJS that uses One Liner Jokes Pakcage from NPM.. and generates new jokes for user each time! I also have to learn how to deploy such a project to Vercel or Netlify!

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify - View</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main bg-zinc-900 w-full min-h-screen p-24 text-white">
+        <a href="/" class="text-blue-500 inline-block mb-10 cursor-pointer">Go back to home</a>
+        <h1 class="text-5xl tracking-tight"><%= fileName.slice(0, -4).replace(/([a-z])([A-Z])/g, '$1 $2') %></h1>
+        <p class="text-xl mt-3 tracking-wide font-light"><%= fileData %></p>
+    </div>
+
+    <script src="javascripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify - Edit</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main bg-zinc-900 w-full min-h-screen p-24">
+        <a href="/" class="text-blue-500 inline-block mb-10 cursor-pointer">Go back to home</a>
+        <div class="form">
+            <form action="/edit" method="post">
+                <input class="block w-full px-5 py-3 bg-zinc-800 rounded-md outline-none text-white" type="text" placeholder="Previous title here" id="previousTitle" name="previousTitle" readonly value="<%= fileName %>">
+                <input class="block w-full px-5 py-3 bg-zinc-800 rounded-md outline-none text-white mt-3" type="text" placeholder="New title here" id="newTitle" name="newTitle" value="<%= fileName %>">
+                <textarea class="block w-full px-5 py-3 bg-zinc-800 resize-none mt-3 rounded-md outline-none text-white" rows="5" cols="30" name="previousTask" id="previousTask" placeholder="Previous task here" readonly><%= fileData %></textarea>
+                <textarea class="block w-full px-5 py-3 bg-zinc-800 resize-none mt-3 rounded-md outline-none text-white" rows="5" cols="30" name="newTask" id="newTask" placeholder="New task here"><%= fileData %></textarea>
+                <input type="submit" value="Update task" class="mt-3 bg-blue-700 px-3 py-2 text-lg rounded-md cursor-pointer text-white">
+            </form>
+        </div>
+    </div>
+
+    <script src="javascripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify - Home</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main bg-zinc-900 w-full min-h-screen p-24">
+        <div class="form">
+            <form action="/create" method="post">
+                <input class="block w-full px-5 py-3 bg-zinc-800 rounded-md outline-none text-white" type="text" placeholder="Title goes here!" id="titleInput" name="titleInput">
+                <textarea class="block w-full px-5 py-3 bg-zinc-800 resize-none mt-3 rounded-md outline-none text-white" rows="5" cols="30" name="taskInput" id="taskInput" placeholder="Write your task details here"></textarea>
+                <input type="submit" value="Create task" class="mt-3 bg-blue-700 px-3 py-2 text-lg rounded-md cursor-pointer text-white">
+            </form>
+        </div>
+        <div class="tasks pt-10 flex gap-4 flex-wrap ">    
+            <% if (files.length > 0) { %>
+                <% files.forEach(function(file) { %>
+                    <div class="task min-w-72 px-3 py-4 bg-zinc-800 rounded-md grow">
+                        <h1 class="text-white text-2xl tracking-tight"><%= file.slice(0, -4).replace(/([a-z])([A-Z])/g, '$1 $2') %></h1>
+                        <div class="flex items-center justify-between py-1 mt-6">
+                            <a href="/file/<%= file %>" class="text-blue-500 inline-block cursor-pointer">View</a>
+                            <a href="/edit/<%= file %>" class="text-zinc-500 inline-block cursor-pointer">Edit</a>
+                            <a href="/delete/<%= file %>" class="text-red-500 inline-block cursor-pointer">Delete</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <h3 class="text-zinc-500 text-lg font-medium tracking-wide">No tasks yet</h3>
+            <% } %>
+        </div>
+    </div>
+
+    <script src="javascripts/script.js"></script>
+</body>
+</html>
